@@ -1,0 +1,94 @@
+@import "../../styles/_variables";
+
+.LinkAdd {
+
+    &__form {
+        background: url("../../../public/images/bg-shorten-mobile.svg") no-repeat center/cover;
+        background-color: $Dark-Violet;
+        background-position-x: 100px;
+        background-position-y: -25px;
+        padding: 2em 1em;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        border-radius: 0.5em;
+
+
+        input {
+            height: 30px;
+            padding: 0.5em;
+            border: none;
+            border-radius: 0.2em;
+        }
+
+    }
+
+    button {
+        height: 45px;
+        border-radius: 0.2em;
+        background-color: $Cyan;
+        border: none;
+        font-size: 24px;
+        font-weight: 700;
+        color: $White;
+        cursor: pointer;
+    }
+
+    &__copyLink {
+        display: flex;
+        flex-direction: column;
+        background-color: $White;
+        border-radius: 0.5em;
+
+        h5 {
+            border-bottom: 1px solid $Gray;
+            padding: 0 0 1em 1.3em;
+        }
+
+        a {
+            padding: 0 0 0 1em;
+            color: $Cyan;
+        }
+
+        button {
+            margin: 0.8em;
+        }
+    }
+}
+
+@media (min-width: 736px) {
+    .LinkAdd {
+
+        &__form {
+            background: url("../../../public/images/bg-shorten-desktop.svg") no-repeat center/cover;
+            background-color: $Dark-Violet;
+            flex-direction: row;
+            align-items: center;
+            height: 100px;
+            padding: 2em;
+
+            input {
+                width: 80%;
+            }
+
+            button {
+                width: 15%;
+            }
+        }
+        &__copyLink {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding:0 1em;
+
+            h5 {
+                border: none;
+                padding: 0;
+            }
+            button {
+                width: 10%;
+            }
+        }
+    }
+}

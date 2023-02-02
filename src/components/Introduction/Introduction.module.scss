@@ -1,0 +1,53 @@
+@import "../../styles/_variables";
+
+.introduction {
+    margin-bottom: 1em;
+
+    .imageIntroduction {
+        width: 100%;
+        margin: 3em 0 0 2em;
+    }
+
+    .textIntroduction {
+        text-align: center;
+
+        h1 {
+            margin: 2em 0 0 0;
+        }
+
+        p {
+            color: $Gray;
+        }
+    }
+
+}
+
+@media (min-width: 736px) {
+    .introduction {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .imageIntroduction {
+        max-width: 50%;
+    }
+
+    .textIntroduction {
+        margin-top: -2em;
+
+        h1 {
+            text-align: left;
+            font-size: 70px;
+        }
+
+        p {
+            text-align: left;
+            font-size: 22px;
+        }
+
+        button {
+            float: left;
+        }
+    }
+
+}

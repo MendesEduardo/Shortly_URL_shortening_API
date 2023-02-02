@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Brand Recognition",
+        "info": "Boost your brand recognition with each click. Generic links don’t",
+        "image": "/images/icon-brand-recognition.svg",
+        "id": "1"
+    },
+    {
+        "title": "Detailed Records",
+        "info": "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
+        "image": "/images/icon-detailed-records.svg",
+        "id": "2"
+    },
+    {
+        "title": "Fully Customizable",
+        "info": "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
+        "image": "/images/icon-fully-customizable.svg",
+        "id": "3"
+    }
+]

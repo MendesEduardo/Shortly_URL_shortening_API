@@ -1,0 +1,26 @@
+@import "../../styles/_variables";
+
+.nav {
+    position: relative;
+    .menuBurger {
+        background: none;
+        border: none;
+        font-size: 30px;
+        position: absolute;
+        right: 0.5em;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+        background: $Dark-Violet;
+        width: 100%;
+        border-radius: 0.8rem;
+        z-index: 10;
+        position: absolute;
+    }
+
+    .menu.active {
+        display: block;
+    }
+}
