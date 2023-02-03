@@ -12,9 +12,9 @@ function LinkItem({ shortUrl, url }) {
 
     return (
         <ul className={styles.link}>
-            <h1>
+            <h2>
                 {url}
-            </h1>
+            </h2>
             <hr />
             <div className={styles.linkcopy}>
                 <li key={shortUrl}>
