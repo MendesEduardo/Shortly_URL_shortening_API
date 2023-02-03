@@ -30,14 +30,14 @@
         text-decoration: none;
         color: $White;
     }
-
 }
 
 @media (min-width: 736px) {
     .linkMenu {
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: space-between;
+        margin-left: 3em;
 
         li a,
         .login a {
@@ -47,10 +47,6 @@
         li a:hover,
         .login a:hover {
             color: $Black;
-        }
-
-        li a:nth-child(3) {
-            margin-left: 2em;
         }
 
         .login {

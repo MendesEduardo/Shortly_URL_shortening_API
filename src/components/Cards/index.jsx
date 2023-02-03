@@ -13,6 +13,7 @@ function Cards() {
                     advanced statistics dashboard.
                 </p>
             </article>
+
             <article className={styles.cards}>
                 <div className={styles.cardsDiv1}>
                     {Data.map(card => <MapCard

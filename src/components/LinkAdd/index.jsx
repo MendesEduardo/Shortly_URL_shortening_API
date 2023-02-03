@@ -8,7 +8,7 @@ const getLocalStorage = () => {
         return JSON.parse(localStorage.getItem("links"))
     } else {
         return []
-    }
+    } 
 }
 
 function LinkAdd() {

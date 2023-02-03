@@ -18,7 +18,7 @@ function NavBar() {
         <a href="#login">Login</a>
         <Button01>Sign Up</Button01>
       </div>
-
+ 
     </ul>
   )
 };
