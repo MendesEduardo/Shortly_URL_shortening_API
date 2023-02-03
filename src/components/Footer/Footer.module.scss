@@ -1,0 +1,48 @@
+@import "../../styles/_variables";
+
+.footer {
+    margin-top: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $Black;
+    border-radius: 0.5em 0.5em 0 0;
+
+    ul {
+        img {
+            margin: 0 0.8em;
+        }
+    }
+
+    &__logo {
+        padding: 2em;
+        filter: invert(100%);
+    }
+
+    li {
+        margin-left: -2.5em;
+        list-style: none;
+        padding: 0.2em;
+        color: $Gray;
+        cursor: pointer;
+    }
+
+    li:hover {
+        color: $Cyan;
+    }
+
+    li:nth-child(1) {
+        margin-bottom: 1em;
+        color: $White;
+    }
+}
+
+@media (min-width: 736px) {
+    .footer {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+}

@@ -13,12 +13,12 @@ function NavBar() {
       <li>
         <a href="#resources">Resources</a>
       </li>
-      <li>
+
+      <div className={styles.login}>
         <a href="#login">Login</a>
-      </li>
-      <li>
         <Button01>Sign Up</Button01>
-      </li>
+      </div>
+
     </ul>
   )
 };

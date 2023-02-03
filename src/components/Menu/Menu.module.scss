@@ -10,12 +10,52 @@
         padding: 0.7em;
         font-size: 24px;
     }
-    li:nth-child(4) {
-        border-top: 1px solid $White;
-    }
 
     li a {
         text-decoration: none;
         color: $White;
     }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+        padding: 1em;
+        border-top: 1px solid $White;
+    }
+
+    .login a {
+        font-size: 24px;
+        text-decoration: none;
+        color: $White;
+    }
+
+}
+
+@media (min-width: 736px) {
+    .linkMenu {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        li a,
+        .login a {
+            color: $Gray;
+        }
+
+        li a:hover,
+        .login a:hover {
+            color: $Black;
+        }
+
+        li a:nth-child(3) {
+            margin-left: 2em;
+        }
+
+        .login {
+            flex-direction: row;
+        }
+    }
+
 }

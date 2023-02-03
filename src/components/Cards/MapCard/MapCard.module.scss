@@ -1,0 +1,42 @@
+@import "../../../styles/_variables";
+
+.mapCards {
+    background-color: $White;
+    border-radius: 0.3em;
+    height: auto;
+    text-align: center;
+
+    &__image {
+        background-color: $Dark-Violet;
+        border-radius: 50%;
+        margin-top: -3em;
+
+        img {
+            width: 50px;
+        }
+    }
+
+    &__title {
+        margin-top: -1em;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__paragraph {
+        margin-top: -3em;
+        color: $Grayish-Violet;
+    }
+}
+
+@media (min-width: 736px) {
+    .mapCards {
+        width: 30%;
+        height: 250px;
+    }
+    .mapCards:nth-child(1) {
+        margin-top: -12em;
+    }
+    .mapCards:nth-child(2) {
+        margin-top: -6em;
+    }
+}

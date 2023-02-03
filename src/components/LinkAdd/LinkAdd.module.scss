@@ -40,6 +40,7 @@
         flex-direction: column;
         background-color: $White;
         border-radius: 0.5em;
+        margin-bottom: 1.2em;
 
         h5 {
             border-bottom: 1px solid $Gray;
@@ -54,6 +55,11 @@
         button {
             margin: 0.8em;
         }
+
+    }
+
+    button:hover {
+        filter: brightness(110%);
     }
 }
 
@@ -76,16 +82,18 @@
                 width: 15%;
             }
         }
+
         &__copyLink {
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding:0 1em;
+            padding: 0 1em;
 
             h5 {
                 border: none;
                 padding: 0;
             }
+
             button {
                 width: 10%;
             }

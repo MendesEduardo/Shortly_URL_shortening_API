@@ -1,0 +1,51 @@
+@import "../../styles/_variables";
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        align-items: center;
+        padding: 1em;
+    }
+
+}
+
+.cardsText {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        padding: 0 1em;
+    }
+
+    p {
+        margin-top: -2em;
+        padding: 2em;
+        color: $Grayish-Violet;
+        text-align: center;
+    }
+}
+
+.bg {
+    background-color: $Gray;
+    border-radius: 0.5em;
+}
+
+@media (min-width: 736px) {
+    .cards {
+        align-items: flex-start;
+        margin-top: 3em;
+
+        .cardsDiv1 {
+            flex-direction: row;
+        }
+    }
+
+}

@@ -2,16 +2,18 @@ import styles from './MapCard.module.scss';
 
 function MapCard(props) {
     return (
-        <article className={styles.cardArticles}>
+        <article className={styles.mapCards}>
             <div key={props.id}>
-                <img className={styles.cardArticles__image}
-                    src={props.image}
-                    alt={props.title}
-                />
-                <h4 className={styles.cardArticles__title}>
+                <div className={styles.mapCards__image}>
+                    <img 
+                        src={props.image}
+                        alt={props.title}
+                    />
+                </div>
+                <h4 className={styles.mapCards__title}>
                     {props.title}
                 </h4>
-                <p className={styles.cardArticles__paragraph}>
+                <p className={styles.mapCards__paragraph}>
                     {props.info}
                 </p>
             </div>
