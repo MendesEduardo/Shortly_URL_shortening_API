@@ -1,72 +1,58 @@
-import { useEffect, useState } from 'react';
-import styles from './LinkAdd.module.scss';
+import { useState } from "react";
+import styles from "./LinkAdd.module.scss";
+import LinkItem from "./LinkItem";
 
-const getLocalStorage = () => {
-    let links = localStorage.getItem("links")
+function LinkForm() {
+    const [url, setUrl] = useState("");
+    const [links, setLinks] = useState([]);
+    const [error, setError] = useState(false);
 
-    if (links) {
-        return JSON.parse(localStorage.getItem("links"))
-    } else {
-        return []
-    } 
-}
-
-function LinkAdd() {
-    const [text, setText] = useState("")
-    const [links, setLinks] = useState(getLocalStorage())
-    const [buttonText, setButtonText] = useState("Copy")
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        if (!text) {
-            alert("Please add")
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const regex =
+            /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/;
+        if (!regex.test(url)) {
+            setError(true);
         } else {
-            const shortenLink = async () => {
-                const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
-                const data = await res.json()
-                console.log(data.result)
-                setLinks(data.result)
-                setText("")
-            }
+            setError(false);
+            const response = await fetch(
+                `https://api.shrtco.de/v2/shorten?url=${url}`
+            );
+            const data = await response.json();
 
-            shortenLink()
+            const shortUrl = data.result.short_link;
+            setLinks([...links, { shortUrl, url }]);
         }
-    }
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(links.full_short_link)
-        setButtonText("Copied!")
-    }
-
-    useEffect(() => {
-        localStorage.setItem("links", JSON.stringify(links))
-    }, [links])
-
-
+    };
 
     return (
-        <section className={styles.LinkAdd}>
-            <form onSubmit={handleSubmit} className={styles.LinkAdd__form}>
-                <input
-                    type="url"
-                    id="nome"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder='Shorten a link here...'
-                />
+        <>
+            <div className={styles.linkAdd}>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <input
+                        type="text"
+                        placeholder="Shorten a link here..."
+                        value={url}
+                        onChange={(e) => setUrl(e.target.value)}
+                        className={`${styles.input} ${error ? styles.erro : ""}`}
+                    />
 
-                <button type='submit' onClick={handleSubmit}>Shorten It!</button>
-            </form>
+                    <button type="submit">
+                        Shorten it!
+                    </button>
+                </form>
+                    {error && (
+                        <p>
+                            Please add a link
+                        </p>
+                    )}
+            </div>
+            {!error &&
+                links.map(({ shortUrl, url }) => (
+                    <LinkItem key={shortUrl} shortUrl={shortUrl} url={url} />
+                ))}
+        </>
+    );
+}
 
-            <article className={styles.LinkAdd__copyLink}>
-                <h5>{links.original_link}</h5>
-                <a href={links.full_short_link}>{links.full_short_link}</a>
-                <button onClick={handleCopy}>{buttonText}</button>
-            </article>
-        </section>
-    )
-};
-
-export default LinkAdd;
+export default LinkForm;

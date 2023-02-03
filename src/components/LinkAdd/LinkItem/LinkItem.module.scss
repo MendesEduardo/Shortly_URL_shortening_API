@@ -1,0 +1,56 @@
+@import "../../../styles/_variables";
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+
+    li {
+        color: $Cyan;
+        list-style: none;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    h5 {
+        border: none;
+        padding: 0;
+    }
+
+    button {
+        height: 45px;
+        width: 100%;
+        border-radius: 0.2em;
+        background-color: $Cyan;
+        border: none;
+        font-size: 24px;
+        font-weight: 700;
+        color: $White;
+        cursor: pointer;
+    }
+
+    button:hover {
+        filter: brightness(110%);
+    }
+}
+
+@media (min-width: 736px) {
+    .link {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1em;
+
+        .linkcopy {
+            display: flex;
+            gap: 2em;
+            width: 30%;
+
+            li {
+                margin-top: 0.5em;
+            }
+        }
+    }
+}

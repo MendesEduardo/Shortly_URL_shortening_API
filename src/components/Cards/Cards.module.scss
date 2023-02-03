@@ -36,6 +36,8 @@
 .bg {
     background-color: $Gray;
     border-radius: 0.5em;
+    z-index: -10;
+    position: relative;
 }
 
 @media (min-width: 736px) {
