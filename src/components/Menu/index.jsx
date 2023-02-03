@@ -13,7 +13,7 @@ function NavBar() {
       <li>
         <a href="#resources">Resources</a>
       </li>
-
+    <div className={styles.bar}></div>
       <div className={styles.login}>
         <a href="#login">Login</a>
         <Button01>Sign Up</Button01>
